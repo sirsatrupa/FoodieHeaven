@@ -1,0 +1,16 @@
+{% extends 'master.html' %}
+
+{% block content %}
+<div class="container my-4 bg-light " style="width:fit-content;">
+    <h2>Login</h2>
+    <h4>Please enter username and password to login.</h4>
+    <!--Validation of html not applied here. it is used for testing only on first level-->
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {{user_data.as_p}}
+        <input type="submit" value="Sign In">
+        <br>
+        <p>Don't have an account? <a href="{%url 'register' %}">Register</a></p>
+    </form>
+</div>
+{% endblock %}

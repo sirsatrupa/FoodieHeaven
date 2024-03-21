@@ -1,0 +1,24 @@
+{% extends 'master.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+</head>
+<body>
+{%block content %}
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Food Item
+        </button>
+        <ul class="dropdown-menu">
+          <li><button class="dropdown-item" type="button">Web Deelopment</button></li>
+          <li><button class="dropdown-item" type="button">Python Full stack</button></li>
+          <li><button class="dropdown-item" type="button">Java</button></li>
+        </ul>
+      </div>
+    
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends 'master.html' %}
+{%block content%}
+
+<!--Validation of html not applied here. it is used for testing only on first level-->
+<!-- <div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 card" style="padding:20px">
+            <h3>Please Create Your Account Here</h3>
+
+            <form method='post' novalidate>
+                {% csrf_token %}
+                <table>
+                    {% for fm in reg_fm %}
+                    <tr>
+                        <td>{{fm.label_tag}}</td>
+                        <td>{{fm}}</td>
+                        <td>{{fm.errors}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div> -->
+
+
+<!-- <div class="container my-4 bg-light " style="width: fit-content;">
+    <h2>Register Here</h2>
+    <h4>Complete your registration process to create your account with us</h4>
+  
+    <form method="post" action="{% url 'register' %}">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="name" class="form-label">User Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+      </div>
+
+      <div class="mb-3">
+        <label for="name" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+      </div>
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+      </div>
+      
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
+      </div>
+      
+      <div class="mb-3">
+        <label for="message" class="form-label">Password</label>
+        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="message" class="form-label">Password Confirmation</label>
+        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message"></textarea>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+  </div> -->
+
+
+<div class="container my-4 bg-light " style="width: fit-content;">
+    <h2>Register Here</h2>
+    <h4>Complete your registration process to create your account with us</h4>
+
+    <form method="POST" action="{% url 'register' %}">
+        {% csrf_token %}
+        <table>
+            {% for fm in reg_fm %}
+            <tr>
+                <td>{{fm.label_tag}}</td>
+                <td>{{fm}}</td>
+                <td>{{fm.errors}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <input type="submit" value="Register">
+    </form>
+</div>
+<div class="col-4"></div>
+
+{% endblock %}
